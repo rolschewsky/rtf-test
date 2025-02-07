@@ -1,0 +1,6 @@
+<Project>
+	<PropertyGroup>
+		<_DevExpressVersionShort>v23.2</_DevExpressVersionShort>
+		<_DevExpressVersionFull>23.2.5.0</_DevExpressVersionFull>
+	</PropertyGroup>
+</Project>
