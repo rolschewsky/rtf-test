@@ -1,0 +1,3 @@
+[submodule "Brendel.Toolbelt.DevExpress.Win"]
+	path = Brendel.Toolbelt.DevExpress.Win
+	url = https://github.com/Brendel-Software/Brendel.Toolbelt.DevExpress.Win

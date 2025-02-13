@@ -1,11 +1,9 @@
 ﻿using System.ComponentModel;
-using System.Drawing.Printing;
 using System.Media;
 using DevExpress.Drawing.Printing;
 using DevExpress.Office;
 using DevExpress.Utils.Controls;
 using DevExpress.XtraEditors;
-using DevExpress.XtraPrinting.Drawing;
 using DevExpress.XtraPrinting.Native;
 using DevExpress.XtraRichEdit;
 using DevExpress.XtraRichEdit.API.Native;

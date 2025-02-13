@@ -27,7 +27,7 @@
 			this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
 			this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
 			this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
-			this.wysiwygRichEditControl1 = new Brendel.Toolbelt.Desktop.Controls.WysiwygRichEditControl();
+			this.wysiwygRichEditControl1 = new Brendel.Toolbelt.DevExpress.Win.Controls.WysiwygRichEditControl();
 			this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
 			((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
 			this.layoutControl1.SuspendLayout();
@@ -90,7 +90,7 @@
 			this.wysiwygRichEditControl1.Options.VerticalRuler.Visibility = DevExpress.XtraRichEdit.RichEditRulerVisibility.Hidden;
 			this.wysiwygRichEditControl1.PageMargins = new DevExpress.XtraPrinting.Native.MarginsF(0, 0, 0, 0);
 			this.wysiwygRichEditControl1.PageSize = new System.Drawing.SizeF(65F, 20F);
-			this.wysiwygRichEditControl1.PageZoomMode = Brendel.Toolbelt.Desktop.Controls.WysiwygRichEditControl.ZoomMode.None;
+			this.wysiwygRichEditControl1.PageZoomMode = Brendel.Toolbelt.DevExpress.Win.Controls.WysiwygRichEditControl.ZoomMode.None;
 			this.wysiwygRichEditControl1.Size = new System.Drawing.Size(1093, 721);
 			this.wysiwygRichEditControl1.TabIndex = 4;
 			this.wysiwygRichEditControl1.Unit = DevExpress.Office.DocumentUnit.Millimeter;
@@ -129,7 +129,7 @@
 
 		private DevExpress.XtraLayout.LayoutControl layoutControl1;
 		private DevExpress.XtraLayout.LayoutControlGroup Root;
-		private Brendel.Toolbelt.Desktop.Controls.WysiwygRichEditControl wysiwygRichEditControl1;
+		private Brendel.Toolbelt.DevExpress.Win.Controls.WysiwygRichEditControl wysiwygRichEditControl1;
 		private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
 		private DevExpress.XtraEditors.SimpleButton simpleButton1;
 		private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;

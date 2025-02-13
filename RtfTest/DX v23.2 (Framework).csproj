@@ -132,9 +132,9 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Brendel.Toolbelt.Desktop\Brendel.Toolbelt.Desktop.csproj">
-      <Project>{6eff17ed-4eea-4fcd-8ff8-542562ff8cd2}</Project>
-      <Name>Brendel.Toolbelt.Desktop</Name>
+    <ProjectReference Include="..\Brendel.Toolbelt.DevExpress.Win\Brendel.Toolbelt.DevExpress.Win\Brendel.Toolbelt.DevExpress.Win.csproj">
+      <Project>{1c20b116-56ef-45fb-8e6a-228bf1db0a5e}</Project>
+      <Name>Brendel.Toolbelt.DevExpress.Win</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

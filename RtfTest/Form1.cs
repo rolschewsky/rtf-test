@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Data.SqlClient;
+using System.Threading;
+using System.Threading.Tasks;
 using System.Windows.Forms;
+using Brendel.Toolbelt.DevExpress.Win.Controls;
 using Dapper;
 using DevExpress.XtraEditors;
 using RtfTest.Properties;
@@ -8,7 +11,6 @@ using RtfTest.Properties;
 namespace RtfTest;
 
 public partial class Form1 : XtraForm {
-
 	private const string EXAMPLE_RTF = """
 	                                   {\rtf1\ansi
 	                                   {\fonttbl{\f0 Arial;}}
@@ -54,6 +56,7 @@ public partial class Form1 : XtraForm {
 	                                   \row}
 	                                   }
 	                                   """;
+
 	public Form1() {
 		InitializeComponent();
 	}

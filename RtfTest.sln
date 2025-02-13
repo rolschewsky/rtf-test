@@ -11,9 +11,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		Directory.Build.props = Directory.Build.props
 	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Brendel.Toolbelt.Desktop", "Brendel.Toolbelt.Desktop\Brendel.Toolbelt.Desktop.csproj", "{6EFF17ED-4EEA-4FCD-8FF8-542562FF8CD2}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DX v24.1 (NET8)", "NET8Winforms\DX v24.1 (NET8).csproj", "{D68D4458-3938-41F2-8445-5E0BBB8520BD}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Brendel.Toolbelt.DevExpress.Win", "Brendel.Toolbelt.DevExpress.Win\Brendel.Toolbelt.DevExpress.Win\Brendel.Toolbelt.DevExpress.Win.csproj", "{1C20B116-56EF-45FB-8E6A-228BF1DB0A5E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,14 +29,14 @@ Global
 		{F50A9F2F-75D7-4DF4-A9D5-71E1F5727647}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F50A9F2F-75D7-4DF4-A9D5-71E1F5727647}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F50A9F2F-75D7-4DF4-A9D5-71E1F5727647}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6EFF17ED-4EEA-4FCD-8FF8-542562FF8CD2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6EFF17ED-4EEA-4FCD-8FF8-542562FF8CD2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6EFF17ED-4EEA-4FCD-8FF8-542562FF8CD2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6EFF17ED-4EEA-4FCD-8FF8-542562FF8CD2}.Release|Any CPU.Build.0 = Release|Any CPU
 		{D68D4458-3938-41F2-8445-5E0BBB8520BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D68D4458-3938-41F2-8445-5E0BBB8520BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D68D4458-3938-41F2-8445-5E0BBB8520BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D68D4458-3938-41F2-8445-5E0BBB8520BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1C20B116-56EF-45FB-8E6A-228BF1DB0A5E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C20B116-56EF-45FB-8E6A-228BF1DB0A5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C20B116-56EF-45FB-8E6A-228BF1DB0A5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C20B116-56EF-45FB-8E6A-228BF1DB0A5E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

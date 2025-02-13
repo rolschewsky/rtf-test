@@ -1,6 +1,4 @@
-﻿using DevExpress.XtraPrinting.Native;
-
-namespace RtfTest {
+﻿namespace RtfTest {
 	partial class Form1 {
 		/// <summary>
 		/// Required designer variable.
@@ -28,7 +26,7 @@ namespace RtfTest {
 			DevExpress.XtraPrinting.Native.MarginsF marginsF1 = new DevExpress.XtraPrinting.Native.MarginsF();
 			this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
 			this.memoEdit2 = new DevExpress.XtraEditors.MemoEdit();
-			this.wysiwygRichEditControl1 = new Brendel.Toolbelt.Desktop.Controls.WysiwygRichEditControl();
+			this.wysiwygRichEditControl1 = new Brendel.Toolbelt.DevExpress.Win.Controls.WysiwygRichEditControl();
 			this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
 			this.memoEdit1 = new DevExpress.XtraEditors.MemoEdit();
 			this.textEdit2 = new DevExpress.XtraEditors.TextEdit();
@@ -77,7 +75,7 @@ namespace RtfTest {
 			this.layoutControl1.Location = new System.Drawing.Point(0, 0);
 			this.layoutControl1.Name = "layoutControl1";
 			this.layoutControl1.Root = this.Root;
-			this.layoutControl1.Size = new System.Drawing.Size(2063, 1029);
+			this.layoutControl1.Size = new System.Drawing.Size(1826, 1172);
 			this.layoutControl1.TabIndex = 0;
 			this.layoutControl1.Text = "layoutControl1";
 			// 
@@ -85,7 +83,7 @@ namespace RtfTest {
 			// 
 			this.memoEdit2.Location = new System.Drawing.Point(24, 185);
 			this.memoEdit2.Name = "memoEdit2";
-			this.memoEdit2.Size = new System.Drawing.Size(826, 820);
+			this.memoEdit2.Size = new System.Drawing.Size(996, 963);
 			this.memoEdit2.StyleController = this.layoutControl1;
 			this.memoEdit2.TabIndex = 10;
 			this.memoEdit2.EditValueChanged += new System.EventHandler(this.memoEdit2_EditValueChanged);
@@ -93,8 +91,8 @@ namespace RtfTest {
 			// wysiwygRichEditControl1
 			// 
 			this.wysiwygRichEditControl1.AutoGrowPageHeight = true;
-			this.wysiwygRichEditControl1.AutoTrimTrailingEmptyParagraphs = true;
-			this.wysiwygRichEditControl1.Location = new System.Drawing.Point(878, 184);
+			this.wysiwygRichEditControl1.AutoTrimTrailingEmptyParagraphs = false;
+			this.wysiwygRichEditControl1.Location = new System.Drawing.Point(1048, 184);
 			this.wysiwygRichEditControl1.Modified = true;
 			this.wysiwygRichEditControl1.Name = "wysiwygRichEditControl1";
 			this.wysiwygRichEditControl1.Options.DocumentSaveOptions.CurrentFormat = DevExpress.XtraRichEdit.DocumentFormat.PlainText;
@@ -106,8 +104,8 @@ namespace RtfTest {
 			marginsF1.Top = 0F;
 			this.wysiwygRichEditControl1.PageMargins = marginsF1;
 			this.wysiwygRichEditControl1.PageSize = new System.Drawing.SizeF(120F, 30F);
-			this.wysiwygRichEditControl1.PageZoomMode = Brendel.Toolbelt.Desktop.Controls.WysiwygRichEditControl.ZoomMode.FitPage;
-			this.wysiwygRichEditControl1.Size = new System.Drawing.Size(1161, 821);
+			this.wysiwygRichEditControl1.PageZoomMode = Brendel.Toolbelt.DevExpress.Win.Controls.WysiwygRichEditControl.ZoomMode.None;
+			this.wysiwygRichEditControl1.Size = new System.Drawing.Size(754, 964);
 			this.wysiwygRichEditControl1.TabIndex = 9;
 			this.wysiwygRichEditControl1.Unit = DevExpress.Office.DocumentUnit.Millimeter;
 			this.wysiwygRichEditControl1.Views.PrintLayoutView.MaxHorizontalPageCount = 1;
@@ -115,9 +113,9 @@ namespace RtfTest {
 			// 
 			// simpleButton1
 			// 
-			this.simpleButton1.Location = new System.Drawing.Point(1033, 92);
+			this.simpleButton1.Location = new System.Drawing.Point(915, 92);
 			this.simpleButton1.Name = "simpleButton1";
-			this.simpleButton1.Size = new System.Drawing.Size(1006, 32);
+			this.simpleButton1.Size = new System.Drawing.Size(887, 32);
 			this.simpleButton1.StyleController = this.layoutControl1;
 			this.simpleButton1.TabIndex = 8;
 			this.simpleButton1.Text = "Laden";
@@ -127,7 +125,7 @@ namespace RtfTest {
 			// 
 			this.memoEdit1.Location = new System.Drawing.Point(24, 185);
 			this.memoEdit1.Name = "memoEdit1";
-			this.memoEdit1.Size = new System.Drawing.Size(826, 820);
+			this.memoEdit1.Size = new System.Drawing.Size(996, 963);
 			this.memoEdit1.StyleController = this.layoutControl1;
 			this.memoEdit1.TabIndex = 6;
 			this.memoEdit1.EditValueChanged += new System.EventHandler(this.memoEdit1_EditValueChanged);
@@ -136,7 +134,7 @@ namespace RtfTest {
 			// 
 			this.textEdit2.Location = new System.Drawing.Point(187, 95);
 			this.textEdit2.Name = "textEdit2";
-			this.textEdit2.Size = new System.Drawing.Size(842, 26);
+			this.textEdit2.Size = new System.Drawing.Size(724, 26);
 			this.textEdit2.StyleController = this.layoutControl1;
 			this.textEdit2.TabIndex = 5;
 			this.textEdit2.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textEdit2_KeyUp);
@@ -145,7 +143,7 @@ namespace RtfTest {
 			// 
 			this.textEdit1.Location = new System.Drawing.Point(187, 59);
 			this.textEdit1.Name = "textEdit1";
-			this.textEdit1.Size = new System.Drawing.Size(1852, 26);
+			this.textEdit1.Size = new System.Drawing.Size(1615, 26);
 			this.textEdit1.StyleController = this.layoutControl1;
 			this.textEdit1.TabIndex = 4;
 			// 
@@ -158,16 +156,16 @@ namespace RtfTest {
             this.layoutControlGroup3,
             this.tabbedControlGroup1});
 			this.Root.Name = "Root";
-			this.Root.Size = new System.Drawing.Size(2063, 1029);
+			this.Root.Size = new System.Drawing.Size(1826, 1172);
 			this.Root.TextVisible = false;
 			// 
 			// layoutControlGroup2
 			// 
 			this.layoutControlGroup2.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlItem4});
-			this.layoutControlGroup2.Location = new System.Drawing.Point(854, 128);
+			this.layoutControlGroup2.Location = new System.Drawing.Point(1024, 128);
 			this.layoutControlGroup2.Name = "layoutControlGroup2";
-			this.layoutControlGroup2.Size = new System.Drawing.Size(1189, 881);
+			this.layoutControlGroup2.Size = new System.Drawing.Size(782, 1024);
 			this.layoutControlGroup2.Text = "RTF";
 			// 
 			// layoutControlItem4
@@ -176,7 +174,7 @@ namespace RtfTest {
 			this.layoutControlItem4.Location = new System.Drawing.Point(0, 0);
 			this.layoutControlItem4.MinSize = new System.Drawing.Size(1, 1);
 			this.layoutControlItem4.Name = "layoutControlItem4";
-			this.layoutControlItem4.Size = new System.Drawing.Size(1165, 825);
+			this.layoutControlItem4.Size = new System.Drawing.Size(758, 968);
 			this.layoutControlItem4.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
 			this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
 			this.layoutControlItem4.TextVisible = false;
@@ -189,15 +187,15 @@ namespace RtfTest {
             this.layoutControlItem1});
 			this.layoutControlGroup3.Location = new System.Drawing.Point(0, 0);
 			this.layoutControlGroup3.Name = "layoutControlGroup3";
-			this.layoutControlGroup3.Size = new System.Drawing.Size(2043, 128);
+			this.layoutControlGroup3.Size = new System.Drawing.Size(1806, 128);
 			this.layoutControlGroup3.Text = "Input";
 			// 
 			// layoutControlItem5
 			// 
 			this.layoutControlItem5.Control = this.simpleButton1;
-			this.layoutControlItem5.Location = new System.Drawing.Point(1009, 36);
+			this.layoutControlItem5.Location = new System.Drawing.Point(891, 36);
 			this.layoutControlItem5.Name = "layoutControlItem5";
-			this.layoutControlItem5.Size = new System.Drawing.Size(1010, 36);
+			this.layoutControlItem5.Size = new System.Drawing.Size(891, 36);
 			this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
 			this.layoutControlItem5.TextVisible = false;
 			// 
@@ -207,7 +205,7 @@ namespace RtfTest {
 			this.layoutControlItem2.Control = this.textEdit2;
 			this.layoutControlItem2.Location = new System.Drawing.Point(0, 36);
 			this.layoutControlItem2.Name = "layoutControlItem2";
-			this.layoutControlItem2.Size = new System.Drawing.Size(1009, 36);
+			this.layoutControlItem2.Size = new System.Drawing.Size(891, 36);
 			this.layoutControlItem2.Text = "ArtikelID";
 			this.layoutControlItem2.TextSize = new System.Drawing.Size(151, 19);
 			// 
@@ -219,7 +217,7 @@ namespace RtfTest {
 			this.layoutControlItem1.MaxSize = new System.Drawing.Size(0, 36);
 			this.layoutControlItem1.MinSize = new System.Drawing.Size(242, 36);
 			this.layoutControlItem1.Name = "layoutControlItem1";
-			this.layoutControlItem1.Size = new System.Drawing.Size(2019, 36);
+			this.layoutControlItem1.Size = new System.Drawing.Size(1782, 36);
 			this.layoutControlItem1.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
 			this.layoutControlItem1.Text = "DB Connection String";
 			this.layoutControlItem1.TextSize = new System.Drawing.Size(151, 19);
@@ -229,7 +227,7 @@ namespace RtfTest {
 			this.tabbedControlGroup1.Location = new System.Drawing.Point(0, 128);
 			this.tabbedControlGroup1.Name = "tabbedControlGroup1";
 			this.tabbedControlGroup1.SelectedTabPage = this.layoutControlGroup1;
-			this.tabbedControlGroup1.Size = new System.Drawing.Size(854, 881);
+			this.tabbedControlGroup1.Size = new System.Drawing.Size(1024, 1024);
 			this.tabbedControlGroup1.TabPages.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlGroup1,
             this.layoutControlGroup4});
@@ -240,7 +238,7 @@ namespace RtfTest {
             this.layoutControlItem3});
 			this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
 			this.layoutControlGroup1.Name = "layoutControlGroup1";
-			this.layoutControlGroup1.Size = new System.Drawing.Size(830, 824);
+			this.layoutControlGroup1.Size = new System.Drawing.Size(1000, 967);
 			this.layoutControlGroup1.Text = "Rich Text aus Datenbank";
 			// 
 			// layoutControlItem3
@@ -248,7 +246,7 @@ namespace RtfTest {
 			this.layoutControlItem3.Control = this.memoEdit1;
 			this.layoutControlItem3.Location = new System.Drawing.Point(0, 0);
 			this.layoutControlItem3.Name = "layoutControlItem3";
-			this.layoutControlItem3.Size = new System.Drawing.Size(830, 824);
+			this.layoutControlItem3.Size = new System.Drawing.Size(1000, 967);
 			this.layoutControlItem3.Text = "Rohdaten";
 			this.layoutControlItem3.TextLocation = DevExpress.Utils.Locations.Top;
 			this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
@@ -260,7 +258,7 @@ namespace RtfTest {
             this.layoutControlItem6});
 			this.layoutControlGroup4.Location = new System.Drawing.Point(0, 0);
 			this.layoutControlGroup4.Name = "layoutControlGroup4";
-			this.layoutControlGroup4.Size = new System.Drawing.Size(830, 824);
+			this.layoutControlGroup4.Size = new System.Drawing.Size(1000, 967);
 			this.layoutControlGroup4.Text = "Rich Text aus RichEditControl";
 			// 
 			// layoutControlItem6
@@ -268,7 +266,7 @@ namespace RtfTest {
 			this.layoutControlItem6.Control = this.memoEdit2;
 			this.layoutControlItem6.Location = new System.Drawing.Point(0, 0);
 			this.layoutControlItem6.Name = "layoutControlItem6";
-			this.layoutControlItem6.Size = new System.Drawing.Size(830, 824);
+			this.layoutControlItem6.Size = new System.Drawing.Size(1000, 967);
 			this.layoutControlItem6.TextSize = new System.Drawing.Size(0, 0);
 			this.layoutControlItem6.TextVisible = false;
 			// 
@@ -276,7 +274,7 @@ namespace RtfTest {
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(2063, 1029);
+			this.ClientSize = new System.Drawing.Size(1826, 1172);
 			this.Controls.Add(this.layoutControl1);
 			this.Margin = new System.Windows.Forms.Padding(4);
 			this.Name = "Form1";
@@ -316,7 +314,7 @@ namespace RtfTest {
 		private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup2;
 		private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup3;
 		private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
-		private Brendel.Toolbelt.Desktop.Controls.WysiwygRichEditControl wysiwygRichEditControl1;
+		private Brendel.Toolbelt.DevExpress.Win.Controls.WysiwygRichEditControl wysiwygRichEditControl1;
 		private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
 		private DevExpress.XtraEditors.MemoEdit memoEdit2;
 		private DevExpress.XtraLayout.TabbedControlGroup tabbedControlGroup1;

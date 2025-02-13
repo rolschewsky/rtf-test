@@ -13,6 +13,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <ProjectReference Include="..\Brendel.Toolbelt.Desktop\Brendel.Toolbelt.Desktop.csproj" />
+	  <ProjectReference Include="..\Brendel.Toolbelt.DevExpress.Win\Brendel.Toolbelt.DevExpress.Win\Brendel.Toolbelt.DevExpress.Win.csproj" />
 	</ItemGroup>
 </Project>
