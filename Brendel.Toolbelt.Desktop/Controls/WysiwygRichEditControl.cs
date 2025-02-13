@@ -1,22 +1,18 @@
-﻿using System;
-using System.ComponentModel;
-using System.Drawing;
+﻿using System.ComponentModel;
 using System.Drawing.Printing;
-using System.Linq;
 using System.Media;
-using System.Threading;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using DevExpress.Drawing.Printing;
 using DevExpress.Office;
 using DevExpress.Utils.Controls;
 using DevExpress.XtraEditors;
+using DevExpress.XtraPrinting.Drawing;
+using DevExpress.XtraPrinting.Native;
 using DevExpress.XtraRichEdit;
 using DevExpress.XtraRichEdit.API.Native;
 using DevExpress.XtraRichEdit.Commands;
 using DevExpress.XtraRichEdit.Localization;
 
-namespace Brendel.Toolbelt.Winforms.Controls;
+namespace Brendel.Toolbelt.Desktop.Controls;
 
 [Description("Ein einfaches Rich Text Feld")]
 public class WysiwygRichEditControl : RichEditControl, IXtraResizableControl {
@@ -38,7 +34,7 @@ public class WysiwygRichEditControl : RichEditControl, IXtraResizableControl {
 	#endregion
 
 	private SizeF _pageSize = new(148, 105);
-	private Margins _pageMargins = new(0, 0, 0, 0);
+	private MarginsF _pageMargins = new(0, 0, 0, 0);
 	private bool _hasOverflow;
 	private bool _isTrimming;
 	private int _paragraphCount;
@@ -49,7 +45,7 @@ public class WysiwygRichEditControl : RichEditControl, IXtraResizableControl {
 	/// </summary>
 	[Description("Ränder der Seite in Millimeter")]
 	[Category("Page")]
-	public Margins PageMargins {
+	public MarginsF PageMargins {
 		get => _pageMargins;
 		set {
 			if (Equals(_pageMargins, value)) {
@@ -57,7 +53,7 @@ public class WysiwygRichEditControl : RichEditControl, IXtraResizableControl {
 			}
 
 			_pageMargins = value;
-			UpdatePageMargins();
+			UpdatePageMargins(_pageMargins);
 		}
 	}
 
@@ -112,10 +108,22 @@ public class WysiwygRichEditControl : RichEditControl, IXtraResizableControl {
 			if (_hasOverflow) {
 				Views.PrintLayoutView.BackColor = Color.Red;
 				SystemSounds.Hand.Play();
-				XtraMessageBox.Show("Der Inhalt dieser Text-Box ist zu lang und wird nicht vollständig verarbeitet/angezeigt werden.", "Inhaltsbegrenzung", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+				XtraMessageBox.Show("Der Inhalt dieser Text-Box ist zu lang und kann nicht vollständig verarbeitet/angezeigt werden.", "Inhaltsbegrenzung", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 			} else {
 				Views.PrintLayoutView.BackColor = Color.White;
 			}
+		}
+	}
+
+	[Bindable(true)]
+	[Browsable(false)]
+	[DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+	public new string? RtfText {
+		get => base.RtfText;
+		set {
+			base.RtfText = value;
+			BeginInvoke(() => UpdatePageMargins(PageMargins));
+			BeginInvoke(() => UpdatePageSize(PageSize));
 		}
 	}
 
@@ -133,40 +141,47 @@ public class WysiwygRichEditControl : RichEditControl, IXtraResizableControl {
 		OnInitializeDocument();
 	}
 
-	public void TrimTrailingEmptyParagraphs() {
-		if (_isTrimming) {
-			return;
-		}
+	private CancellationTokenSource? _trimDebounceCts;
 
-		_isTrimming = true;
-		var isUpdatingDocument = false;
-
-		foreach (var paragraph in Document.Paragraphs.Reverse()) {
-			// prüft ob der Cursor in dem Absatz ist
-			if (paragraph.Range.Contains(Document.CaretPosition)) {
-				break;
+	public void ExecuteDebouncedTrimTrailingEmptyParagraphs(TimeSpan? debounceDelay = null) {
+		var delay = debounceDelay ?? TimeSpan.FromMilliseconds(250);
+		_trimDebounceCts?.Cancel();
+		var token = (_trimDebounceCts = new()).Token;
+		Task.Delay(delay, token).ContinueWith(_ => {
+			if (token.IsCancellationRequested) {
+				return;
 			}
 
-			// prüft ob der Absatz leer ist
-			var paragraphText = Document.GetText(paragraph.Range);
-			if (!string.IsNullOrWhiteSpace(paragraphText)) {
-				break;
+			_isTrimming = true;
+			var isUpdatingDocument = false;
+
+			foreach (var paragraph in Document.Paragraphs.Reverse()) {
+				// prüft ob der Cursor in dem Absatz ist
+				if (paragraph.Range.Contains(Document.CaretPosition)) {
+					break;
+				}
+
+				// prüft ob der Absatz leer ist
+				var paragraphText = Document.GetText(paragraph.Range);
+				if (!string.IsNullOrWhiteSpace(paragraphText)) {
+					break;
+				}
+
+				// Dokument in Update-Modus versetzen, damit sukzessive Änderungen schneller durchgeführt werden können
+				if (!isUpdatingDocument) {
+					isUpdatingDocument = true;
+					BeginUpdate();
+				}
+
+				Document.Delete(paragraph.Range);
 			}
 
-			// Dokument in Update-Modus versetzen, damit sukzessive Änderungen schneller durchgeführt werden können
-			if (!isUpdatingDocument) {
-				isUpdatingDocument = true;
-				BeginUpdate();
+			if (isUpdatingDocument) {
+				EndUpdate();
 			}
 
-			Document.Delete(paragraph.Range);
-		}
-
-		if (isUpdatingDocument) {
-			EndUpdate();
-		}
-
-		_isTrimming = false;
+			_isTrimming = false;
+		}, token, TaskContinuationOptions.OnlyOnRanToCompletion, TaskScheduler.FromCurrentSynchronizationContext());
 	}
 
 	protected override void OnSizeChanged(EventArgs e) {
@@ -206,7 +221,7 @@ public class WysiwygRichEditControl : RichEditControl, IXtraResizableControl {
 
 	private void OnContentChanged() {
 		if (!_isTrimming && AutoTrimTrailingEmptyParagraphs) {
-			TrimTrailingEmptyParagraphs();
+			ExecuteDebouncedTrimTrailingEmptyParagraphs();
 		}
 
 		if (!_isTrimming) {
@@ -220,11 +235,9 @@ public class WysiwygRichEditControl : RichEditControl, IXtraResizableControl {
 
 	private void OnInitializeDocument() {
 		UpdatePageSize(PageSize);
-		UpdatePageMargins();
+		UpdatePageMargins(PageMargins);
 		HasOverflow = false;
 	}
-
-	private Section GetFirstSection() => Document.Sections.First();
 
 	private SectionPage GetFirstPage() => Document.Sections.First().Page;
 
@@ -281,18 +294,21 @@ public class WysiwygRichEditControl : RichEditControl, IXtraResizableControl {
 	}
 
 	private void UpdatePageSize(SizeF size) {
-		var page = GetFirstPage();
-		page.PaperKind = DXPaperKind.Custom;
-		page.Width = size.Width;
-		page.Height = size.Height;
+		foreach (var section in Document.Sections) {
+			var page = section.Page;
+			page.PaperKind = DXPaperKind.Custom;
+			page.Width = size.Width;
+			page.Height = size.Height;
+		}
 	}
 
-	private void UpdatePageMargins() {
-		var section = GetFirstSection();
-		section.Margins.Left = PageMargins.Left;
-		section.Margins.Right = PageMargins.Right;
-		section.Margins.Top = PageMargins.Top;
-		section.Margins.Bottom = PageMargins.Bottom;
+	private void UpdatePageMargins(MarginsF margins) {
+		foreach (var section in Document.Sections) {
+			section.Margins.Left = margins.Left;
+			section.Margins.Right = margins.Right;
+			section.Margins.Top = margins.Top;
+			section.Margins.Bottom = margins.Bottom;
+		}
 	}
 
 	public enum ZoomMode {
