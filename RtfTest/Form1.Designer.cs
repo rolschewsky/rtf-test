@@ -26,14 +26,12 @@
 			DevExpress.XtraPrinting.Native.MarginsF marginsF1 = new DevExpress.XtraPrinting.Native.MarginsF();
 			this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
 			this.memoEdit2 = new DevExpress.XtraEditors.MemoEdit();
-			this.wysiwygRichEditControl1 = new Brendel.Toolbelt.DevExpress.Win.Controls.WysiwygRichEditControl();
 			this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
 			this.memoEdit1 = new DevExpress.XtraEditors.MemoEdit();
 			this.textEdit2 = new DevExpress.XtraEditors.TextEdit();
 			this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
 			this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
 			this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
-			this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
 			this.layoutControlGroup3 = new DevExpress.XtraLayout.LayoutControlGroup();
 			this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
 			this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -43,6 +41,10 @@
 			this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
 			this.layoutControlGroup4 = new DevExpress.XtraLayout.LayoutControlGroup();
 			this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
+			this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
+			this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
+			this.wysiwygRichEditControl1 = new Brendel.Toolbelt.DevExpress.Win.Controls.WysiwygRichEditControl();
+			this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
 			((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
 			this.layoutControl1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.memoEdit2.Properties)).BeginInit();
@@ -51,7 +53,6 @@
 			((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
@@ -61,6 +62,8 @@
 			((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup4)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// layoutControl1
@@ -71,6 +74,7 @@
 			this.layoutControl1.Controls.Add(this.memoEdit1);
 			this.layoutControl1.Controls.Add(this.textEdit2);
 			this.layoutControl1.Controls.Add(this.textEdit1);
+			this.layoutControl1.Controls.Add(this.simpleButton2);
 			this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.layoutControl1.Location = new System.Drawing.Point(0, 0);
 			this.layoutControl1.Name = "layoutControl1";
@@ -87,29 +91,6 @@
 			this.memoEdit2.StyleController = this.layoutControl1;
 			this.memoEdit2.TabIndex = 10;
 			this.memoEdit2.EditValueChanged += new System.EventHandler(this.memoEdit2_EditValueChanged);
-			// 
-			// wysiwygRichEditControl1
-			// 
-			this.wysiwygRichEditControl1.AutoGrowPageHeight = true;
-			this.wysiwygRichEditControl1.AutoTrimTrailingEmptyParagraphs = false;
-			this.wysiwygRichEditControl1.Location = new System.Drawing.Point(1048, 184);
-			this.wysiwygRichEditControl1.Modified = true;
-			this.wysiwygRichEditControl1.Name = "wysiwygRichEditControl1";
-			this.wysiwygRichEditControl1.Options.DocumentSaveOptions.CurrentFormat = DevExpress.XtraRichEdit.DocumentFormat.PlainText;
-			this.wysiwygRichEditControl1.Options.HorizontalRuler.Visibility = DevExpress.XtraRichEdit.RichEditRulerVisibility.Hidden;
-			this.wysiwygRichEditControl1.Options.VerticalRuler.Visibility = DevExpress.XtraRichEdit.RichEditRulerVisibility.Hidden;
-			marginsF1.Bottom = 0F;
-			marginsF1.Left = 0F;
-			marginsF1.Right = 0F;
-			marginsF1.Top = 0F;
-			this.wysiwygRichEditControl1.PageMargins = marginsF1;
-			this.wysiwygRichEditControl1.PageSize = new System.Drawing.SizeF(120F, 30F);
-			this.wysiwygRichEditControl1.PageZoomMode = Brendel.Toolbelt.DevExpress.Win.Controls.WysiwygRichEditControl.ZoomMode.None;
-			this.wysiwygRichEditControl1.Size = new System.Drawing.Size(754, 964);
-			this.wysiwygRichEditControl1.TabIndex = 9;
-			this.wysiwygRichEditControl1.Unit = DevExpress.Office.DocumentUnit.Millimeter;
-			this.wysiwygRichEditControl1.Views.PrintLayoutView.MaxHorizontalPageCount = 1;
-			this.wysiwygRichEditControl1.RtfTextChanged += new System.EventHandler(this.wysiwygRichEditControl1_RtfTextChanged);
 			// 
 			// simpleButton1
 			// 
@@ -154,7 +135,8 @@
 			this.Root.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlGroup2,
             this.layoutControlGroup3,
-            this.tabbedControlGroup1});
+            this.tabbedControlGroup1,
+            this.layoutControlItem7});
 			this.Root.Name = "Root";
 			this.Root.Size = new System.Drawing.Size(1826, 1172);
 			this.Root.TextVisible = false;
@@ -163,21 +145,10 @@
 			// 
 			this.layoutControlGroup2.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlItem4});
-			this.layoutControlGroup2.Location = new System.Drawing.Point(1024, 128);
+			this.layoutControlGroup2.Location = new System.Drawing.Point(1024, 164);
 			this.layoutControlGroup2.Name = "layoutControlGroup2";
-			this.layoutControlGroup2.Size = new System.Drawing.Size(782, 1024);
+			this.layoutControlGroup2.Size = new System.Drawing.Size(782, 988);
 			this.layoutControlGroup2.Text = "RTF";
-			// 
-			// layoutControlItem4
-			// 
-			this.layoutControlItem4.Control = this.wysiwygRichEditControl1;
-			this.layoutControlItem4.Location = new System.Drawing.Point(0, 0);
-			this.layoutControlItem4.MinSize = new System.Drawing.Size(1, 1);
-			this.layoutControlItem4.Name = "layoutControlItem4";
-			this.layoutControlItem4.Size = new System.Drawing.Size(758, 968);
-			this.layoutControlItem4.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
-			this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
-			this.layoutControlItem4.TextVisible = false;
 			// 
 			// layoutControlGroup3
 			// 
@@ -270,6 +241,59 @@
 			this.layoutControlItem6.TextSize = new System.Drawing.Size(0, 0);
 			this.layoutControlItem6.TextVisible = false;
 			// 
+			// simpleButton2
+			// 
+			this.simpleButton2.Location = new System.Drawing.Point(1036, 140);
+			this.simpleButton2.Name = "simpleButton2";
+			this.simpleButton2.Size = new System.Drawing.Size(778, 32);
+			this.simpleButton2.StyleController = this.layoutControl1;
+			this.simpleButton2.TabIndex = 11;
+			this.simpleButton2.Text = "RTF Editor Form öffnen";
+			this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
+			// 
+			// layoutControlItem7
+			// 
+			this.layoutControlItem7.Control = this.simpleButton2;
+			this.layoutControlItem7.Location = new System.Drawing.Point(1024, 128);
+			this.layoutControlItem7.Name = "layoutControlItem7";
+			this.layoutControlItem7.Size = new System.Drawing.Size(782, 36);
+			this.layoutControlItem7.TextSize = new System.Drawing.Size(0, 0);
+			this.layoutControlItem7.TextVisible = false;
+			// 
+			// wysiwygRichEditControl1
+			// 
+			this.wysiwygRichEditControl1.AutoGrowPageHeight = true;
+			this.wysiwygRichEditControl1.AutoTrimTrailingEmptyParagraphs = false;
+			this.wysiwygRichEditControl1.Location = new System.Drawing.Point(1048, 220);
+			this.wysiwygRichEditControl1.Modified = true;
+			this.wysiwygRichEditControl1.Name = "wysiwygRichEditControl1";
+			this.wysiwygRichEditControl1.Options.DocumentSaveOptions.CurrentFormat = DevExpress.XtraRichEdit.DocumentFormat.PlainText;
+			this.wysiwygRichEditControl1.Options.HorizontalRuler.Visibility = DevExpress.XtraRichEdit.RichEditRulerVisibility.Hidden;
+			this.wysiwygRichEditControl1.Options.VerticalRuler.Visibility = DevExpress.XtraRichEdit.RichEditRulerVisibility.Hidden;
+			marginsF1.Bottom = 0F;
+			marginsF1.Left = 0F;
+			marginsF1.Right = 0F;
+			marginsF1.Top = 0F;
+			this.wysiwygRichEditControl1.PageMargins = marginsF1;
+			this.wysiwygRichEditControl1.PageSize = new System.Drawing.SizeF(120F, 30F);
+			this.wysiwygRichEditControl1.PageZoomMode = Brendel.Toolbelt.DevExpress.Win.Controls.WysiwygRichEditControl.ZoomMode.None;
+			this.wysiwygRichEditControl1.Size = new System.Drawing.Size(754, 928);
+			this.wysiwygRichEditControl1.TabIndex = 9;
+			this.wysiwygRichEditControl1.Unit = DevExpress.Office.DocumentUnit.Millimeter;
+			this.wysiwygRichEditControl1.Views.PrintLayoutView.MaxHorizontalPageCount = 1;
+			this.wysiwygRichEditControl1.RtfTextChanged += new System.EventHandler(this.wysiwygRichEditControl1_RtfTextChanged);
+			// 
+			// layoutControlItem4
+			// 
+			this.layoutControlItem4.Control = this.wysiwygRichEditControl1;
+			this.layoutControlItem4.Location = new System.Drawing.Point(0, 0);
+			this.layoutControlItem4.MinSize = new System.Drawing.Size(1, 1);
+			this.layoutControlItem4.Name = "layoutControlItem4";
+			this.layoutControlItem4.Size = new System.Drawing.Size(758, 932);
+			this.layoutControlItem4.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+			this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
+			this.layoutControlItem4.TextVisible = false;
+			// 
 			// Form1
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -287,7 +311,6 @@
 			((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
@@ -297,6 +320,8 @@
 			((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup4)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
 			this.ResumeLayout(false);
 
 		}
@@ -322,6 +347,8 @@
 		private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
 		private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
 		private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
+		private DevExpress.XtraEditors.SimpleButton simpleButton2;
+		private DevExpress.XtraLayout.LayoutControlItem layoutControlItem7;
 	}
 }
 

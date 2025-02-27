@@ -59,6 +59,7 @@
     <Reference Include="DevExpress.XtraReports.v23.2" />
     <Reference Include="DevExpress.XtraReports.v23.2.Extensions" />
     <Reference Include="DevExpress.XtraRichEdit.v23.2" />
+    <Reference Include="PresentationCore" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />

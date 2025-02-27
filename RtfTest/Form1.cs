@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Data.SqlClient;
-using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using Brendel.Toolbelt.DevExpress.Win.Controls;
+using Brendel.Toolbelt.DevExpress.Win.Forms;
 using Dapper;
 using DevExpress.XtraEditors;
 using RtfTest.Properties;
@@ -68,6 +66,20 @@ public partial class Form1 : XtraForm {
 		}
 
 		wysiwygRichEditControl1.RtfText = EXAMPLE_RTF;
+
+		ShowRtfEditorForm();
+	}
+
+	private void ShowRtfEditorForm() {
+		var form2 = new RichTextEditorForm();
+		form2.PageSize = wysiwygRichEditControl1.PageSize;
+		form2.PageMargins = wysiwygRichEditControl1.PageMargins;
+		form2.RtfText = wysiwygRichEditControl1.RtfText;
+		form2.CloseOnSave = true;
+		form2.Show();
+		form2.Saved += (_, args) => {
+			memoEdit1.Text = args.RtfText;
+		};
 	}
 
 	private void simpleButton1_Click(object sender, EventArgs e) {
@@ -111,4 +123,6 @@ public partial class Form1 : XtraForm {
 	private void wysiwygRichEditControl1_RtfTextChanged(object sender, EventArgs e) {
 		memoEdit2.Text = wysiwygRichEditControl1.RtfText;
 	}
+
+	private void simpleButton2_Click(object sender, EventArgs args) => wysiwygRichEditControl1.ShowEditForm();
 }
