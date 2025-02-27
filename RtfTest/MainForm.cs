@@ -8,7 +8,7 @@ using RtfTest.Properties;
 
 namespace RtfTest;
 
-public partial class Form1 : XtraForm {
+public partial class MainForm : XtraForm {
 	private const string EXAMPLE_RTF = """
 	                                   {\rtf1\ansi
 	                                   {\fonttbl{\f0 Arial;}}
@@ -55,7 +55,7 @@ public partial class Form1 : XtraForm {
 	                                   }
 	                                   """;
 
-	public Form1() {
+	public MainForm() {
 		InitializeComponent();
 	}
 

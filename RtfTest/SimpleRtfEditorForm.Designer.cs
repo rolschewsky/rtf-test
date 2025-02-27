@@ -81,7 +81,6 @@
 			// wysiwygRichEditControl1
 			// 
 			this.wysiwygRichEditControl1.AutoGrowPageHeight = false;
-			this.wysiwygRichEditControl1.AutoTrimTrailingEmptyParagraphs = true;
 			this.wysiwygRichEditControl1.Location = new System.Drawing.Point(12, 12);
 			this.wysiwygRichEditControl1.Modified = true;
 			this.wysiwygRichEditControl1.Name = "wysiwygRichEditControl1";
